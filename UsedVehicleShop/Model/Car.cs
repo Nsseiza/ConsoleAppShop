@@ -1,17 +1,19 @@
 ﻿using System.Collections.Generic;
 
-namespace UsedVehicleShop
+namespace UsedVehicleShop.Model
 {
     class Car : Vehicle
     {
+        public Engine Engine { get; set; }
         public string Brand { get; set; }
         public string Model { get; set; }
         public int NumOfDoors { get; set; }
         public List<string> Equipment { get; set; }
 
         public Car(string brand, string model, int numOfDoors, List<string> equipment,
-            string advTitle, double price, string descrption, bool condition = true) : base(advTitle, price, descrption, condition)
+            Engine engine, string advTitle, double price, string descrption, bool condition = true) : base(advTitle, price, descrption, condition)
         {
+            Engine = engine;
             Brand = brand;
             Model = model;
             NumOfDoors = numOfDoors;
@@ -25,14 +27,18 @@ namespace UsedVehicleShop
             AdvTitle = tokens[0];
             Price = double.Parse(tokens[1]);
             Descrption = tokens[2];
-            Brand = tokens[3];
-            Model = tokens[4];
-            NumOfDoors = int.Parse(tokens[5]);
-            Condition = bool.Parse(tokens[6]);
-            Deleted = bool.Parse(tokens[7]);
+            double capacity = double.Parse(tokens[3]);
+            double power = double.Parse(tokens[4]);
+            Engine.FuelType type = (tokens[5] == "Gasoline") ? Engine.FuelType.Gasoline : Engine.FuelType.Diesel;
+            Engine = new Engine(capacity, power, type);
+            Brand = tokens[6];
+            Model = tokens[7];
+            NumOfDoors = int.Parse(tokens[8]);
+            Condition = bool.Parse(tokens[9]);
+            Deleted = bool.Parse(tokens[10]);
             Equipment = new List<string>();
 
-            for (int i = 8; i < tokens.Length; i++)
+            for (int i = 11; i < tokens.Length; i++)
             {
                 Equipment.Add(tokens[i]);
             }
@@ -40,8 +46,7 @@ namespace UsedVehicleShop
 
         public override string ToString()
         {
-            string str = base.ToString() + string.Format($"; brand: {Brand}; model: {Model}; doors: {NumOfDoors}; Equipment: ",
-                Brand, Model, NumOfDoors);
+            string str = base.ToString() + string.Format($"; engine: {Engine} brand: {Brand}; model: {Model}; doors: {NumOfDoors}; Equipment: ");
 
             if (Equipment.Count == 0)
             {
@@ -66,7 +71,7 @@ namespace UsedVehicleShop
 
         public override string ToFileString()
         {
-            string firstPart = string.Format($"Car,{AdvTitle},{Price},{Descrption},{Brand},{Model},{NumOfDoors},{Condition},{Deleted}");
+            string firstPart = string.Format($"Car,{AdvTitle},{Price},{Descrption},{Engine.EngineCapacity},{Engine.Power},{Engine.fuelType},{Brand},{Model},{NumOfDoors},{Condition},{Deleted}");
 
             string secondPart = "";
             for (int i = 0; i < Equipment.Count; i++)

@@ -1,4 +1,4 @@
-﻿namespace UsedVehicleShop
+﻿namespace UsedVehicleShop.Model
 {
     class Vehicle
     {
