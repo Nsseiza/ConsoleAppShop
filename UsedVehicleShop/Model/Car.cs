@@ -29,7 +29,7 @@ namespace UsedVehicleShop.Model
             Descrption = tokens[2];
             double capacity = double.Parse(tokens[3]);
             double power = double.Parse(tokens[4]);
-            Engine.FuelType type = (tokens[5] == "Gasoline") ? Engine.FuelType.Gasoline : Engine.FuelType.Diesel;
+            Engine.FuelType type = (tokens[5] == "Petrol") ? Engine.FuelType.Petrol : Engine.FuelType.Diesel;
             Engine = new Engine(capacity, power, type);
             Brand = tokens[6];
             Model = tokens[7];

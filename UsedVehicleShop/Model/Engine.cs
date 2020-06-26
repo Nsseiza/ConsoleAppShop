@@ -2,7 +2,7 @@
 {
     class Engine
     {
-        public enum FuelType { Gasoline, Diesel }
+        public enum FuelType { Petrol, Diesel }
 
         public double EngineCapacity { get; set; }
         public double Power { get; set; }
