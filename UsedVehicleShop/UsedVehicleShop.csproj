@@ -52,6 +52,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\Vehicle.cs" />
     <Compile Include="UI\BasicMenu.cs" />
+    <Compile Include="UI\EntryDeleteEditUI.cs" />
+    <Compile Include="UI\OverviewUI.cs" />
     <Compile Include="UI\VehicleUI.cs" />
   </ItemGroup>
   <ItemGroup>
