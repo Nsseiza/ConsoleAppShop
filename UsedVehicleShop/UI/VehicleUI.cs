@@ -101,5 +101,25 @@ namespace UsedVehicleShop.UI
                     Console.WriteLine(v);
             }
         }
+
+        public static void PrintSoldVehicles()
+        {
+            foreach (Vehicle v in allVehicles)
+            {
+                if (v.Condition == false)
+                    Console.WriteLine(v);
+            }
+        }
+
+        public static void PrintUnsoldVehicles()
+        {
+            foreach (Vehicle v in allVehicles)
+            {
+                if (v.Condition == true)
+                    Console.WriteLine(v);
+            }
+        }
+
+
     }
 }
