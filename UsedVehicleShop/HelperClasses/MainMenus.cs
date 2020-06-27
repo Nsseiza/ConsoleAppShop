@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UsedVehicleShop.HelperClasses
 {
@@ -10,6 +6,19 @@ namespace UsedVehicleShop.HelperClasses
 
     class MainMenus
     {
+        private static void PrintSelectEntityMenu()
+        {
+            Console.WriteLine("Which entity do you want to work with: ");
+            Console.WriteLine("1 - Vehicle");
+            Console.WriteLine("2 - In progress ... [don't work]");
+        }
+
+        public static int SelectEntity()
+        {
+            int option = ExecuteMenu(PrintSelectEntityMenu, 2);
+            return option;
+        }
+
         // Prints and takes the correct option from the given menu
         public static int ExecuteMenu(PrintMenu delegateForPrint, int inOption)
         {
@@ -32,7 +41,7 @@ namespace UsedVehicleShop.HelperClasses
                     Console.WriteLine("Invalid option!");
                 }
             }
-           
+
         }
     }
 }

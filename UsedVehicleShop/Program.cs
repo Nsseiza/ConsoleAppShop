@@ -21,7 +21,7 @@ namespace UsedVehicleShop
         public static void BasicMenuPrint()
         {
             Console.WriteLine("Option:");
-            Console.WriteLine("1 - Vehicle");
+            Console.WriteLine("1 - Start sistem");
             Console.WriteLine("2 - Exit and save the changes to a file");
         }
 
