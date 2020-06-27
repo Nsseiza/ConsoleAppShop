@@ -6,11 +6,15 @@ namespace UsedVehicleShop
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void LoadData()
         {
             Files.AdjustPath();
             VehicleUI.LoadVehicles(Files.VehicleFullPath);
-            VehicleUI.PrintVehicles();
+            //VehicleUI.PrintVehicles();
+        }
+        static void Main(string[] args)
+        {
+           
 
 
 
