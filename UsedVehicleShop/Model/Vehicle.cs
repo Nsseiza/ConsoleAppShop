@@ -42,7 +42,7 @@
 
         public override string ToString()
         {
-            return string.Format($"ID: {ID}; title: {AdvTitle} price: {Price}; condition: {(Condition ? "Available" : "Sold")}; description: {Descrption}");
+            return string.Format($"ID: {ID}| title: {AdvTitle}| price: {Price}| condition: {(Condition ? "Available" : "Sold")}| description: {Descrption}");
         }
 
         public bool IsDeleted()

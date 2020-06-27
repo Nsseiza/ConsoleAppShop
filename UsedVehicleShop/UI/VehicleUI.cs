@@ -15,11 +15,11 @@ namespace UsedVehicleShop.UI
             int i = str.IndexOf(',') + 1;
             string strNoFirstWord = str.Substring(i);
 
-            if (tokens[0] == "Bicikl")
+            if (tokens[0] == "Motorcycle")
             {
                 return new Motorcycle(strNoFirstWord);
             }
-            else if (tokens[0] == "Motocikl")
+            else if (tokens[0] == "Car")
             {
                 return new Car(strNoFirstWord);
             }

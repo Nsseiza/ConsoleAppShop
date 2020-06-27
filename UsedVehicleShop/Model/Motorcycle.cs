@@ -26,7 +26,7 @@
 
         public override string ToString()
         {
-            return base.ToString();
+            return base.ToString() + "| engine: " + Engine;
         }
 
         public override string ToFileString()

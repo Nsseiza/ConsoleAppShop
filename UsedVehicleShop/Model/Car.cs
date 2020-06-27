@@ -46,7 +46,7 @@ namespace UsedVehicleShop.Model
 
         public override string ToString()
         {
-            string str = base.ToString() + string.Format($"; engine: {Engine} brand: {Brand}; model: {Model}; doors: {NumOfDoors}; Equipment: ");
+            string str = base.ToString() + string.Format($"| engine: {Engine}| brand: {Brand}| model: {Model}| doors: {NumOfDoors}| Equipment: ");
 
             if (Equipment.Count == 0)
             {
@@ -58,11 +58,11 @@ namespace UsedVehicleShop.Model
             {
                 if (i == 0)
                 {
-                    strEquipment += string.Format($"{Equipment[i]}");
+                    strEquipment += string.Format($"{Equipment[i]}, ");
                 }
                 else
                 {
-                    strEquipment += string.Format($"{Equipment[i]}");
+                    strEquipment += string.Format($"{Equipment[i]}, ");
                 }
             }
 

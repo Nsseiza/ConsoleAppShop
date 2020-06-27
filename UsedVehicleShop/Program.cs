@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using UsedVehicleShop.HelperClasses;
+using UsedVehicleShop.UI;
 
 namespace UsedVehicleShop
 {
@@ -10,6 +8,13 @@ namespace UsedVehicleShop
     {
         static void Main(string[] args)
         {
+            Files.AdjustPath();
+            VehicleUI.LoadVehicles(Files.VehicleFullPath);
+            VehicleUI.PrintVehicles();
+
+
+
+            Console.ReadKey();
         }
     }
 }
