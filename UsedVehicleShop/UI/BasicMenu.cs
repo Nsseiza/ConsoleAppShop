@@ -25,7 +25,6 @@ namespace UsedVehicleShop.UI
                 else if (opcija == 3)
                     Console.WriteLine("In Progress");
 
-
                 else if (opcija == 4)
                     Console.WriteLine("In Progress");
 

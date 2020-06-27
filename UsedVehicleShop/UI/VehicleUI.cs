@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using UsedVehicleShop.HelperClasses;
 using UsedVehicleShop.Model;
 
@@ -233,6 +234,18 @@ namespace UsedVehicleShop.UI
             foreach (Vehicle v in copyList)
             {
                 Console.WriteLine(v);
+            }
+        }
+
+        // Saving data entity to file
+        public static void SaveVehicle(string fileName)
+        {
+            using (StreamWriter writer = new StreamWriter(fileName, false, Encoding.UTF8))
+            {
+                foreach (Vehicle v in allVehicles)
+                {
+                    writer.WriteLine(v.ToFileString());
+                }
             }
         }
 

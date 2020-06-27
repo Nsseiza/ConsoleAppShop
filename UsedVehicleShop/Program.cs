@@ -15,7 +15,7 @@ namespace UsedVehicleShop
 
         public static void SaveData()
         {
-            //...
+            VehicleUI.SaveVehicle(Files.VehicleFullPath);
         }
 
         public static void BasicMenuPrint()
