@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace UsedVehicleShop.UI
 {
     class BasicMenu
     {
-        public static void BasicMenuPrint()
+        public static void MenuPrint()
         {
             Console.WriteLine("1 - Enter, delete and modify entities");
             Console.WriteLine("2 - Entity Overview");
