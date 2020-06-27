@@ -10,8 +10,8 @@ namespace UsedVehicleShop.Model
         public int NumOfDoors { get; set; }
         public List<string> Equipment { get; set; }
 
-        public Car(string brand, string model, int numOfDoors, List<string> equipment,
-            Engine engine, string advTitle, double price, string descrption, bool condition = true) : base(advTitle, price, descrption, condition)
+        public Car(string advTitle, double price, string descrption,
+            Engine engine, string brand, string model, int numOfDoors, List<string> equipment, bool condition = true) : base(advTitle, price, descrption, condition)
         {
             Engine = engine;
             Brand = brand;

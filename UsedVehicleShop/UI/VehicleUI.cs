@@ -84,6 +84,60 @@ namespace UsedVehicleShop.UI
             }
         }
 
+        private static string LoadTypeVehicle()
+        {
+            while (true)
+            {
+                Console.Write("What type of vehicle do you want (passenger / motorcycle): ");
+                string input = Console.ReadLine();
+                if (input.Equals("passenger") || input.Equals("motorcycle"))
+                {
+                    return input;
+                }
+                else
+                {
+                    Console.WriteLine("Faulty input!");
+                }
+            }
+
+        }
+
+        public static void AddVehicle()
+        {
+            Console.Write("Enter an ad title: ");
+            string title = Console.ReadLine();
+            Console.Write("Unesi cenunter price: ");
+            double price = double.Parse(Console.ReadLine());
+
+            Console.Write("Enter description: ");
+            string description = Console.ReadLine();
+
+            string typeVehicle = LoadTypeVehicle();
+            Vehicle newVehicle = null;
+
+            if (typeVehicle == "motorcycle")
+            {
+                Engine e = EngineUI.LoadEngine();
+                newVehicle = new Motorcycle(title, price, description, e);
+            }
+
+            else if (typeVehicle == "passenger")
+            {
+                /*Motor motor, string marka, string model, int brojVrata, List<string> oprema*/
+                Engine engine = EngineUI.LoadEngine();
+                Console.Write("Enter brand: ");
+                string brand = Console.ReadLine();
+                Console.Write("Enter model: ");
+                string model = Console.ReadLine();
+                Console.Write("Enter doors number: ");
+                int doors = int.Parse(Console.ReadLine());
+                List<string> equipment = LoadEquipment();
+                newVehicle = new Car(title, price, description, engine, brand, model, doors, equipment);
+            }
+
+            allVehicles.Add(newVehicle);
+        }
+
         public static void PrintVehicles()
         {
             foreach (Vehicle v in allVehicles)
