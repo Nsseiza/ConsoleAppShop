@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using UsedVehicleShop.HelperClasses;
 using UsedVehicleShop.Model;
 
 namespace UsedVehicleShop.UI
@@ -138,7 +139,7 @@ namespace UsedVehicleShop.UI
             allVehicles.Add(newVehicle);
         }
 
-        public static void PrintVehicles()
+        public static void PrintExistingVehicles()
         {
             foreach (Vehicle v in allVehicles)
             {
@@ -174,6 +175,66 @@ namespace UsedVehicleShop.UI
             }
         }
 
+
+        // Vehicle sorting
+        public static void PrintSortingOptions()
+        {
+            Console.WriteLine("How do you want to sort vehicles:");
+            Console.WriteLine("1 - By name Ascending");
+            Console.WriteLine("2 - By name Descending");
+            Console.WriteLine("3 - By price Ascending");
+            Console.WriteLine("4 - By price Descending");
+        }
+
+        private static int ByNameAscending(Vehicle v1, Vehicle v2)
+        {
+            return v1.AdvTitle.CompareTo(v2.AdvTitle);
+        }
+
+        private static int ByNameDescending(Vehicle v1, Vehicle v2)
+        {
+            return -v1.AdvTitle.CompareTo(v2.AdvTitle);
+        }
+
+        private static int ByPriceAscending(Vehicle v1, Vehicle v2)
+        {
+            return v1.Price.CompareTo(v2.Price);
+        }
+
+        private static int ByPriceDescending(Vehicle v1, Vehicle v2)
+        {
+            return -v1.Price.CompareTo(v2.Price);
+        }
+
+        public static void PrintAllVehicles()
+        {
+            int option = MainMenus.ExecuteMenu(PrintSortingOptions, 4);
+
+            List<Vehicle> copyList = new List<Vehicle>(allVehicles);
+
+            if (option == 1)
+            {
+                copyList.Sort(ByNameAscending);
+            }
+            else if (option == 2)
+            {
+                copyList.Sort(ByNameDescending);
+            }
+            else if (option == 3)
+            {
+                copyList.Sort(ByPriceAscending);
+            }
+            else if (option == 4)
+            {
+                copyList.Sort(ByPriceDescending);
+            }
+
+            Console.WriteLine("List of vehicles in the system:");
+            foreach (Vehicle v in copyList)
+            {
+                Console.WriteLine(v);
+            }
+        }
 
     }
 }

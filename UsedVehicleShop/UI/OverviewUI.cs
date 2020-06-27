@@ -1,4 +1,5 @@
 ﻿using System;
+using UsedVehicleShop.HelperClasses;
 
 namespace UsedVehicleShop.UI
 {
@@ -17,7 +18,41 @@ namespace UsedVehicleShop.UI
 
         public static void Menu()
         {
-            //...
+            int optionOperation = MainMenus.ExecuteMenu(PrintMenu, 6);
+
+            if (optionOperation == 6)
+                return;
+
+            int optionEntity = MainMenus.SelectEntity();
+
+            if (optionOperation == 1 && optionEntity == 1)
+            {
+                VehicleUI.PrintAllVehicles();
+            }
+            else if (optionOperation == 2 && optionEntity == 1)
+            {
+                VehicleUI.PrintExistingVehicles();
+            }
+            else if (optionOperation == 3 && optionEntity == 1)
+            {
+                VehicleUI.PrintDeletedVehicles();
+            }
+            else if (optionOperation == 4 && optionEntity == 1)
+            {
+                VehicleUI.PrintSoldVehicles();
+            }
+            else if (optionOperation == 4 && optionEntity == 2)
+            {
+                Console.WriteLine("Options 4 and 5 are only possible for vehicles!");
+            }
+            else if (optionOperation == 5 && optionEntity == 1)
+            {
+                VehicleUI.PrintUnsoldVehicles();
+            }
+            else if (optionOperation == 5 && optionEntity == 2)
+            {
+                Console.WriteLine("Options 4 and 5 are only possible for vehicles!");
+            }
         }
     }
 }
