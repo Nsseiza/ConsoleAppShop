@@ -36,7 +36,7 @@ namespace UsedVehicleShop
 
                 if (option == 1)
                 {
-                    BasicMenu.MenuPrint();
+                    BasicMenu.Menu();
                 }
                 else if (option == 2)
                 {

@@ -55,7 +55,6 @@ namespace UsedVehicleShop.UI
         public static void DeleteVehicle()
         {
             Console.Write("Enter the vehicle code you want to delete: ");
-            //int id = IO.UcitajCeoBroj();
             int id = int.Parse(Console.ReadLine());
 
             foreach (Vehicle v in allVehicles)
@@ -106,9 +105,9 @@ namespace UsedVehicleShop.UI
 
         public static void AddVehicle()
         {
-            Console.Write("Enter an ad title: ");
+            Console.Write("Enter title: ");
             string title = Console.ReadLine();
-            Console.Write("Unesi cenunter price: ");
+            Console.Write("Enter price: ");
             double price = double.Parse(Console.ReadLine());
 
             Console.Write("Enter description: ");

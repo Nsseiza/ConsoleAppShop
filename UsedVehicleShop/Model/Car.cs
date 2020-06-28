@@ -46,7 +46,7 @@ namespace UsedVehicleShop.Model
 
         public override string ToString()
         {
-            string str = base.ToString() + string.Format($"| engine: {Engine}| brand: {Brand}| model: {Model}| doors: {NumOfDoors}| Equipment: ");
+            string str = base.ToString() + string.Format($"\n\t engine: {Engine}\n\t brand: {Brand}\n\t model: {Model}\n\t doors: {NumOfDoors}\n\t Equipment: ");
 
             if (Equipment.Count == 0)
             {
